@@ -1,5 +1,7 @@
 package src.domain.entities;
 
+import jakarta.persistence.Column;
+
 public class Address {
 
     public Address(){}
@@ -60,12 +62,21 @@ public class Address {
         this.streetName = streetName;
         this.streetNumber = streetNumber;
     }
+    @Column(name = "cep")
 
     String cep;
+    @Column(name = "state")
+
     String state;
+    @Column(name = "city")
     String city;
+    @Column(name = "neighborhood")
     String  neighborhood;
+    @Column(name = "streetName")
+
     String streetName;
+    @Column(name = "streetNumber")
+
     Integer streetNumber;
 
 }
