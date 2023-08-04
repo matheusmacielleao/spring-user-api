@@ -30,4 +30,12 @@ public class UserService {
         return this.userRepo.getAll();
     }
 
+    public void delete(String cpf){
+        this.userRepo.delete(cpf);
+    }
+
+    public User getByCpf(String cpf){
+        return this.userRepo.getByCpf(cpf);
+    }
+
 }

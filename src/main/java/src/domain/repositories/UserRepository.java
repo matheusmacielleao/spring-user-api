@@ -10,5 +10,7 @@ public interface UserRepository {
     public List<User> getAll();
     public User getByCpf(String cpf);
     public User update(User user);
+    public void delete(String cpf);
+
 
 }

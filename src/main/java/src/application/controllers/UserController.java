@@ -1,6 +1,7 @@
 package src.application.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 import src.domain.dtos.UserDtos;
 import src.domain.entities.User;
@@ -26,6 +27,16 @@ public class UserController {
     @GetMapping
     public List<User> getAll(){
         return this.userService.getAll();
+    }
+
+    @GetMapping("/{cpf}")
+    public User getByCpf(@PathVariable String cpf){
+        return this.userService.getByCpf(cpf);
+    }
+
+    @DeleteMapping("/{cpf}")
+    public void delete(@PathVariable String cpf){
+        this.userService.delete(cpf);
     }
 
 }

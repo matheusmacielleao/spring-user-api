@@ -26,11 +26,16 @@ public class SQLUserRepository implements UserRepository {
 
     @Override
     public User getByCpf(String cpf) {
-        return null;
+        return this.jpaRepo.getByCpf(cpf);
     }
 
     @Override
     public User update(User user) {
         return null;
+    }
+
+    @Override
+    public void delete(String cpf) {
+        this.jpaRepo.deleteById(cpf);
     }
 }
